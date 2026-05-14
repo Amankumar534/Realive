@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #2D5F5D;
+    --primary-dark: #1E4140;
+    --accent: #E8956C;
+    --accent-light: #F4B591;
+    --bg-light: #F9F6F3;
+    --text-dark: #2A2A2A;
+    --text-light: #6B6B6B;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+.font-display {
+    font-family: 'Playfair Display', serif;
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+.animate-slide-up {
+    animation: slideUp 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+.delay-100 {
+    animation-delay: 0.1s;
+}
+
+.delay-200 {
+    animation-delay: 0.2s;
+}
+
+.delay-300 {
+    animation-delay: 0.3s;
+}
+
+.delay-400 {
+    animation-delay: 0.4s;
+}
+
+.delay-500 {
+    animation-delay: 0.5s;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-slide-up {
+    transform: translateY(30px);
+}
+
+.blob-shape {
+    position: absolute;
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    opacity: 0.1;
+}
+
+.service-card {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(45, 95, 93, 0.15);
+}
+
+.team-card {
+    transition: all 0.4s ease;
+}
+
+.team-card:hover .team-image {
+    transform: scale(1.05);
+}
+
+.team-image {
+    transition: transform 0.4s ease;
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(45, 95, 93, 0.1);
+}
+
+.career-card {
+    border-left: 4px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.career-card:hover {
+    border-left-color: var(--accent);
+    background: var(--bg-light);
+}
